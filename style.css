@@ -1,0 +1,172 @@
+/* --- COLORS & VARIABLES --- */
+:root {
+    --marvel-red: #e62429;
+    --dark-bg: #151515;
+    --black-bg: #0b0b0b;
+    --text-white: #ffffff;
+    --text-gray: #a0a0a0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--dark-bg);
+    color: var(--text-white);
+    font-family: 'Montserrat', sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- TYPOGRAPHY --- */
+h1, h2, .logo { font-family: 'Bebas Neue', sans-serif; letter-spacing: 2px; text-transform: uppercase; }
+
+/* --- NAVBAR (Glass Effect) --- */
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(11, 11, 11, 0.85); /* Semi-transparent */
+    backdrop-filter: blur(10px); /* The "Glass" blur effect */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 100;
+    padding: 15px 0;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 2rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.studio-badge {
+    background-color: var(--marvel-red);
+    padding: 2px 8px;
+    font-size: 1rem;
+    color: white;
+    border-radius: 2px;
+}
+
+/* --- SEARCH BAR --- */
+.search-wrapper {
+    position: relative;
+    width: 250px;
+}
+.search-wrapper input {
+    width: 100%;
+    padding: 10px 40px 10px 15px;
+    background: #222;
+    border: 1px solid #333;
+    color: white;
+    border-radius: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    transition: 0.3s;
+}
+.search-wrapper input:focus { border-color: var(--marvel-red); outline: none; background: #000; }
+.search-icon { position: absolute; right: 15px; top: 50%; transform: translateY(-50%); font-size: 0.9rem; opacity: 0.7; }
+
+/* --- HERO SECTION (Cinematic) --- */
+.hero-section {
+    height: 90vh; /* Almost full screen */
+    background-size: cover;
+    background-position: center top;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* The Gradient Overlay - Makes text pop and fades bottom to black */
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(90deg, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 60%, rgba(0,0,0,0.1) 100%),
+                linear-gradient(to top, var(--dark-bg) 5%, transparent 30%);
+    display: flex;
+    align-items: center;
+}
+
+.hero-text-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+.tag-badge {
+    color: var(--marvel-red);
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.hero-section h1 { font-size: 5rem; line-height: 1; margin-bottom: 20px; text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.hero-section p { font-size: 1.1rem; max-width: 600px; color: #ddd; margin-bottom: 30px; line-height: 1.6; }
+
+/* --- BUTTONS --- */
+.hero-buttons { display: flex; gap: 15px; }
+button { cursor: pointer; text-transform: uppercase; font-weight: bold; padding: 15px 35px; border: none; letter-spacing: 1px; transition: 0.3s; }
+
+.btn-primary { background: var(--marvel-red); color: white; clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%); } /* Angular Marvel Shape */
+.btn-primary:hover { background: #b01217; transform: translateY(-2px); }
+
+.btn-secondary { background: transparent; border: 2px solid white; color: white; clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%); }
+.btn-secondary:hover { background: white; color: black; }
+
+/* --- CONTENT GRID --- */
+.container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+.section-header { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; }
+.section-header h2 { font-size: 2rem; }
+.red-line { height: 2px; background: #333; flex-grow: 1; position: relative; }
+.red-line::after { content: ''; position: absolute; left: 0; top: 0; height: 100%; width: 50px; background: var(--marvel-red); }
+
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.movie-card {
+    background: #1f1f1f;
+    border-radius: 4px; /* Slight round */
+    overflow: hidden;
+    transition: 0.4s ease;
+    position: relative;
+    border-bottom: 4px solid transparent;
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 4px solid var(--marvel-red);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.movie-card img { width: 100%; height: 340px; object-fit: cover; opacity: 0.9; transition: 0.4s; }
+.movie-card:hover img { opacity: 1; }
+
+.movie-info { padding: 20px; }
+.movie-title { font-family: 'Bebas Neue'; font-size: 1.4rem; color: white; }
+.movie-date { font-size: 0.85rem; color: var(--text-gray); margin-top: 5px; font-weight: 600; }
+
+/* --- FOOTER --- */
+footer { background: var(--black-bg); padding: 50px 20px; text-align: center; border-top: 1px solid #222; margin-top: 50px; }
+.copyright { color: #555; margin-top: 10px; font-size: 0.9rem; }
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    .hero-section h1 { font-size: 3rem; }
+    .hero-buttons { flex-direction: column; }
+    .nav-content { flex-direction: column; gap: 15px; }
+    .search-wrapper { width: 100%; }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "title": "THE DEATH RATTLE",
+    "releaseDate": "COMING SOON",
+    "description": "Set in Kolkata, the series explores a city where forgotten secrets refuse to stay buried...",
+    "poster": "assets/posters/death-rattle-poster.jpg",
+    "background": "assets/backgrounds/death-rattle-bg.jpg",
+    "trailer": "https://www.youtube.com/watch?v=your_trailer_link"
+  },
+  {
+    "id": 2,
+    "title": "YOUR NEXT MOVIE",
+    "releaseDate": "2026",
+    "description": "Description goes here...",
+    "poster": "assets/posters/next-movie.jpg",
+    "background": "assets/backgrounds/next-bg.jpg",
+    "trailer": "https://www.youtube.com/watch?v=link2"
+  }
+]

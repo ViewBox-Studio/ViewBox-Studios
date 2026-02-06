@@ -4,52 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ViewBox Studio | Cinematic Universe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav>
-        <div class="nav-content">
-            <div class="logo">VIEWBOX<span class="studio-badge">STUDIOS</span></div>
-            <div class="search-wrapper">
-                <input type="text" id="searchInput" placeholder="SEARCH UNIVERSE...">
-                <span class="search-icon">🔍</span>
+    <nav class="navbar">
+        <div class="logo">VIEWBOX<span>STUDIO</span></div>
+        
+        <div class="nav-right">
+            <ul class="nav-links">
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">Trailers</a></li>
+                <li><a href="#">Series</a></li>
+            </ul>
+
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Find a movie...">
+                <button id="search-btn">🔍</button>
             </div>
         </div>
     </nav>
 
-    <header id="hero" class="hero-section">
+    <header class="hero">
         <div class="hero-overlay">
-            <div class="hero-text-container">
-                <span class="tag-badge">LATEST PREMIERE</span>
-                <h1 id="heroTitle">LOADING...</h1>
-                <p id="heroDesc">Experiencing technical difficulties...</p>
-                <div class="hero-buttons">
-                    <button class="btn-primary">WATCH TRAILER</button>
-                    <button class="btn-secondary">MORE INFO</button>
-                </div>
+            <div class="hero-content">
+                <h1>THE NEW ERA BEGINS</h1>
+                <p>Watch the official trailer for our latest release.</p>
+                <a href="#" class="cta-button">WATCH TRAILER</a>
             </div>
         </div>
     </header>
 
-    <main class="container">
-        <div class="section-header">
-            <h2>UPCOMING RELEASES</h2>
-            <div class="red-line"></div>
+    <section class="content-section">
+        <h2 class="section-title">LATEST RELEASES</h2>
+        
+        <div class="poster-grid" id="poster-grid">
+            <!-- Select From Here -->>
+            <div class="poster-card">
+                <div class="image-wrapper">
+                    <img src="assests/posters/death-rattle-poster.jpg" alt="THE DEATH RATTLE">
+                </div>
+                <div class="card-info">
+                    <h3>THE DEATH RATTLE</h3>
+                    <span class="date">COMING SOON</span>
+                </div>
+            </div>
+            <!-- Add Another Poster Here -->>
         </div>
         
-        <div id="movieGrid" class="grid-layout">
-            </div>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <h3>VIEWBOX STUDIOS</h3>
-            <p>Crafting worlds beyond imagination.</p>
-            <p class="copyright">&copy; 2025 ViewBox Studio. All rights reserved.</p>
-        </div>
-    </footer>
+    </section>
 
     <script src="script.js"></script>
 </body>
